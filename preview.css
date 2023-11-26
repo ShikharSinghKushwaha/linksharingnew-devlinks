@@ -1,0 +1,166 @@
+*,body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+
+
+.main-preview-container{
+    width: 100%;
+    height: 330px;
+    background-color: dodgerblue;
+    border-radius: 0px 0px 50px 50px;
+    position: relative;
+    padding: 15px;
+}
+.parent-container-preview{
+    width: 40vw;
+    height: 50vh;
+    margin: auto;
+    background-color: rgb(255, 247, 247);
+    /* border: 2px solid red; */
+    margin: auto;
+    height: 80vh ;
+    width: 20vw;
+    top: 90px;
+    position:relative;
+    border-radius: 20px;
+    border: 1px solid black;
+}
+.basic-info-container{
+   margin: auto;
+  
+  
+}
+
+.top-button-container{
+    width:100%;
+    height: 30px;
+    padding: 30px ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top:15px;
+    background-color: white;
+    border-radius: 15px;
+}
+
+.top-button-container a{
+    font-size: 1.2em;
+    
+    text-decoration: none;
+    color:rgb(99,58,255);
+    padding: 10px 15px;
+    border: 2px solid rgb(99,58,255) ;
+    border-radius: 10px;
+}
+
+#copyUrl{
+    color:rgb(99,58,255);
+    padding: 10px 15px;
+    border: 2px solid rgb(99,58,255);
+    border-radius: 10px;   
+    width: 90px auto;
+    font-size: 1.2em;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.link-style{
+    min-width: 160px;
+    width:auto ;
+    /* border: 2px solid red;*/
+    padding: 10px 10px;
+    border-radius: 10px;
+    display: flex;
+    height: 30px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.copied-url-msg{
+    width: 200px;
+    text-align: center;
+    padding: 8px;
+    color:white;
+    background-color: black;
+    position: absolute;
+    top: 20%;
+    left: 43%;
+    margin: auto;
+    display: none;
+    border-radius: 15px;
+   
+    margin: auto;
+
+   
+    
+}
+
+@media(max-width:800px){
+    .parent-container-preview{
+       
+       
+       
+        margin: auto;
+        height: 80vh ;
+        width: 70vw;
+        top: 90px;
+        position:relative;
+        border-radius: 20px;
+        border: 1px solid black;
+    }
+    .basic-info-container{
+        display:block;
+        height: 100%;
+        width: 100%;
+        background-color: rgb(255, 247, 247);
+        border-radius: 20px; 
+       }
+        .mobile-img{
+            margin: auto;
+            width: 75%;
+            height: 100% auto;
+            display: block;
+        }
+        .top-button-container{
+            width:100%;
+            height: 30px;
+            padding: 20px ;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top:15px;
+            background-color: white;
+            border-radius: 15px;
+        }
+        
+        .top-button-container a{
+            font-size: 1em;
+            
+            text-decoration: none;
+            color:rgb(99,58,255);
+            padding: 4px 8px;
+            border: 2px solid rgb(99,58,255) ;
+            border-radius: 10px;
+        }
+        
+        #copyUrl{
+            color:rgb(99,58,255);
+            padding: 4px 8px;
+            border: 2px solid rgb(99,58,255);
+            border-radius: 10px;   
+            width: 90px auto;
+            font-size: 1em;
+            background-color: transparent;
+            cursor: pointer;
+        }
+        .copied-url-msg{
+           
+            position: absolute;
+            top: 20%;
+            left: 30%;
+            
+        }
+}

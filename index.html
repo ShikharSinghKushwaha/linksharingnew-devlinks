@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Link Sharing Web App</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <section>
+        <main>
+            <div class="main-container">
+            <div class="top-header">
+                <div class="navbar-container">
+                    <h2><a href="index.html" style="text-decoration: none;color: black;">devlinks</a></h2>
+                    <div class="links-container">
+                      <button class="navigate active-btn" id="links">
+                        <span class="material-symbols-outlined icon">link</span>Links
+                      </button>
+                      <button class="navigate" id="profile">
+                        <span class="material-symbols-outlined icon">person</span>Profile
+                      </button>
+                    </div>
+                   <a href="preview.html" target="_self"><button id="preview">Preview</button></a>
+                  </div>
+            </div>
+
+            <div class="content-container">
+                <div class="basic-info-container">
+                    <div class="mobile-img">
+                    <img src="v1017-nt-01-removebg-preview (1).png" alt="Mobile Illustration" />
+                    <!-- <div class="parent-container"> -->
+                    <div class="profiles-info">
+                        <div class="introduction">
+                        <div class="user-img">
+                            <div  alt="User Img" id="profile-picture"> </div>
+                        </div>
+                        <h4 id="username"></h4>
+                        <h3 id="user-email"></h3>
+                    </div>
+                        <div class="link-box">
+                          
+                        </div>
+                    </div>
+                <!-- </div> -->
+                </div>
+                </div>
+                <div class="parent-right-container">
+                <div class="create-links-container">
+                    <div class="top-container" >
+                    <div class="text">
+                    <h1>Customize Your Link</h1>
+                    <h4 class="description">Add/edit/remove links below and then share all your Profiles with the World</h4>
+                    <button class="add-link-btn" id="addLink"><span class="material-symbols-outlined " style="vertical-align: middle;">add</span>Add New Link</button>
+                </div>
+                <div class="overflow-container">
+                <div class="main-links-container">
+               
+                </div>
+                
+                </div>
+
+            </div>
+</div>
+              <div class="main-right-container">
+                 <div class="text">
+                    <h1>Profile Details </h1>
+                    <h4 class="description">Add your details to create a personal touch to your Profile</h4>
+                </div>
+                <div class="right-profile-container">
+                   <div class="profile-container" >
+                    
+                     <h4 class="description left-text">Profile Picture</h4>
+                <div class="right-container">
+                    <div class="custom-file-input"  id="importedImage">
+                        <label for="fileInput" class="file-label">
+                          <span>Choose a file</span>
+                          <input type="file" id="fileInput" class="input-file" accept=".jpg, .png,">
+                        </label>
+                      </div>
+                      <h6 style="font-size: 11px; color: rgb(118,118,118);">Images must me below 1024x1024px.&shy;<br>Use PNG,JPG or BMP format</h6>
+                    </div>
+                   </div>
+
+                   <div class="personal-name-container" >
+                    <div class="input-container" >
+                      <label for="first">First Name</label>
+                      <input type="text" class="input-name" id="first-name" placeholder="e.g John"/>
+                    </div><br>
+                    <div class="input-container">
+                      <label for="last">Last Name</label>
+                      <input type="text" class="input-name" id="last-name"  placeholder="e.g Doe"/>
+                    </div><br>
+                    <div class="input-container">
+                       <label for="email">Email</label>
+                      <input type="email" class="input-name" id="email"  placeholder="e.g Adam" required/>
+                    </div>
+                   </div>
+                </div> 
+                
+              </div>
+                <div class="save-btn">
+                  <div class="clear-history">
+                    <button id="clearHistory">Clear Info</button>
+                  </div>
+                <button id="saveInfo">Save</button>
+
+                </div>
+                </div>
+            </div>
+            <!-- TESTING CONTAINER CLOSED UP -->
+        </div>
+        </main>
+    </section>
+
+
+    <!-- <div class="login-form-container">
+      <div class="form-container">
+        <h3>Login</h3>
+        <h4 class="description">Add your Details below to get back into the app</h4>
+        <form action="authenticate.php" method="post" style="margin-top: 1.2em;" onsubmit="return validateSubmit()">
+           <label for="email" class="login-style">Email
+           <input type="email" name="email"  id="userEmail" placeholder="For e.g adam@gmail.com" autocomplete="off">
+           <span id="loginemailError"></span>
+
+          </label>
+           <label for="pass" class="login-style" >Password
+           <input type="password" id="password" name="password" placeholder="Enter Your Password">
+           <span id="loginpassError"></span>
+          </label><br>
+           <input type="submit" class="submitBtn" id="checkLogin" value="LogIn">
+        </form>
+        <p class="check-style">Didn't have a account? <a href="">Create Account</a></p>
+      </div>
+    </div> -->
+    <script type="module" src="index.js"></script>
+    <script type="module" src="profile.js"></script>
+
+</body>
+</html>
