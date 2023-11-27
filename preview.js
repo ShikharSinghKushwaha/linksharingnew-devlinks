@@ -3,9 +3,9 @@
 const copy = document.getElementById("copyUrl");
 const copyMsg = document.querySelector(".copied-url-msg")
 copy.addEventListener("click",() => {
-  let windowLocation = window.location.href;
+  let windowLocationUrl = window.location.href;
   try {
-    navigator.clipboard.writeText(windowLocation);
+    navigator.clipboard.writeText(windowLocationUrl);
     
   } catch (error) {
     alert('failed',error);
