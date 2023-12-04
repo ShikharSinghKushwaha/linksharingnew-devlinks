@@ -210,7 +210,7 @@ addLink.addEventListener("click",addDiv);
 
 function checkUrl(inputValue,error) {
 
-let platforms = ["facebook",'twitter',"linkedin",'instagram',"youtube","github",'google'];
+let platforms = ["facebook",'twitter',"linkedin",'instagram',"youtube","github",'google','twitch','stackoverflow','facebook'];
 let platformName = platforms.join("|");
 
   const newRegex = new RegExp(`^(https?:\/\/)?(?:www\.)?(${platformName})\.com\/\\S([-a-zA-Z0-9@:%_+.~#?&//=]*)*$`, 'i');
