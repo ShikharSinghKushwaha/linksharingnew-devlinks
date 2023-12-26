@@ -121,9 +121,8 @@
         .mobile-img{
             margin: auto;
             width: 75%;
-            height: 100% ;
-            display: grid;
-            place-items: center;
+            height: 100% auto;
+            display: block;
         }
         .top-button-container{
             width:100%;
