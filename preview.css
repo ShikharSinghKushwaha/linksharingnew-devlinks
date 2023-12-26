@@ -122,7 +122,8 @@
             margin: auto;
             width: 75%;
             height: 100% auto;
-            display: block;
+            display: grid;
+            place-items: center;
         }
         .top-button-container{
             width:100%;
