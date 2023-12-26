@@ -12,7 +12,7 @@ copy.addEventListener("click",() => {
   }
   copyMsg.style.display = "block";
   setTimeout(() => {
-    copyMsg.style.display = "none"
+    copyMsg.style.display = "none";
   },2000)
 
 })

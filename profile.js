@@ -5,12 +5,13 @@
    let userName = document.getElementById("username");
    let userEmail = document.getElementById("user-email");
 
-   let getValue = localStorage.getItem("save-dom");
+   let getValue = localStorage.getItem("firstName");
+   let lastName = localStorage.getItem("lastName")
    let userImage = localStorage.getItem("user-image");
    let linkBox = document.querySelector(".link-box")
 
    profilePicture.style.backgroundImage = `url("${userImage}")`;
-   userName.innerHTML = getValue;
+   userName.innerHTML =`${getValue}${lastName}`;
    let getEmail = localStorage.getItem("email");
    userEmail.innerHTML = getEmail;
    let getLinks = localStorage.getItem("link");

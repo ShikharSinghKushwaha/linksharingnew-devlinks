@@ -120,12 +120,12 @@ main{
 .parent-right-container{
     width: 60%;
     display: flex;
-
-   background-color: white;
+    position: relative;
+   background-color: rgb(253, 253, 253);
    padding: 18px;
    height: 555px;
    overflow-y: hidden;
-   position: relative;
+  
 }
 .create-links-container{
     width: 100%;
@@ -307,7 +307,7 @@ main{
 .overflow-container{
     /* border: 2px solidslateblue; */
     overflow-y: auto;
-    height:calc(30vh + 200px);
+    height:calc(30vh + 240px);
 
 }
 .main-links-container{
@@ -632,6 +632,7 @@ main{
         height: 35px;
         bottom: 10px;
         position: absolute;
+       
        /* right: 10px;   */
     }
 #clearHistory{
@@ -652,6 +653,12 @@ main{
 
     }
 
+.disabled-btn {
+    opacity:.5;
+    transition: .3s;
+    cursor: not-allowed;
+    
+}
 
     /* MEDIA QUERIES  */
 
@@ -675,12 +682,12 @@ main{
         }
        .icon{
         margin-top: 1px;
-        margin-right: 2px;
+        margin-right: 1px;
        }
         .navigate,#preview{
-            margin-right: 4px;
+            margin-right: 2px;
             padding: 5px 8px;
-            width: 70px auto;
+            width: 70px ;
             font-size: 15px;
             border: none;
             border: 2px solid transparent;
@@ -709,26 +716,30 @@ main{
         }
         .parent-right-container{
             width: 100%;
+           padding: 15px;
+           height: 595px;
+           overflow-y: visible;
+          
         }
         .left-text{
             width: 80px;
             
           }
     
-    
+          .overflow-container{
+            overflow-y: auto;
+            height:calc(30vh + 240px);
+        
+        }
     
           .main-right-container{
             /* padding: 18px; */
-           
             width: 100%;
           }
           .right-container{
-            width: 65%;
-            
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 10px;
+            width: 70%;
+            text-align: center;
+           gap: 8px;
           }
           .file-label {
             visibility: visible;
@@ -743,6 +754,12 @@ main{
             position: relative;
             top: 0;
             left: 0;
+        }
+       
+        .save-btn{
+             width: 80%;
+             left: 40px;
+             bottom: 5px;
         }
        
     }
@@ -800,6 +817,7 @@ main{
         border-radius: 8px;
         outline: none;
         cursor: pointer;
+       
         border: none;
         background-color: rgb(99,58,255);
     }

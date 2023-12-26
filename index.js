@@ -2,6 +2,7 @@
 console.log('hello world');
 
 
+let saveBtn = document.getElementById("saveInfo");
 
 let userEmail = document.getElementById("userEmail");
 let userPassword = document.getElementById("password");
@@ -60,19 +61,6 @@ profileBtn.addEventListener("click",function(event) {
   }
   })
 
-  window.addEventListener("onpopstate",changeUrl);
-  
-
-  function changeUrl(){
-    const path = window.location.pathname;
-    if(path === '/'){
-      console.log("its a home page")
-    }else if(path === 'profile tsest'){
-      console.log("this is profile pahe")
-    }
-  }
-
-
 
 
 
@@ -96,6 +84,9 @@ let counterDiv = '';
 let counter ='';
 
 let websiteUrl =  [];
+
+
+
 
 function addDiv(){
  
@@ -128,7 +119,7 @@ console.log(mainLinksContainer.children.length)
                         </div>
                         <h4 class="description">Link</h4>
                         <div class="input">
-                        <input type="text" class="social-link" placeholder= "Write the link of {github}">
+                        <input type="text" class="social-link" placeholder= "Write the link of {github} ">
                         <span class="error-url" ></span>
                         <i class="fa fa-chain social-link-icon"></i>
                      
@@ -172,7 +163,8 @@ console.log(mainLinksContainer.children.length)
    countingTheChildren(mainLinksContainer,counter)
   
 });
-
+saveBtn.disabled = true;
+saveBtn.classList.add("disabled-btn")
 
 }
 
@@ -196,7 +188,7 @@ function addOptions(mainDiv,item,back) {
   let div = document.createElement("div");
   div.innerHTML = item.innerHTML;
   
-  selectOption.querySelector(".input input").placeholder = `Write the link of {${getValue}}`;
+  selectOption.querySelector(".input input").placeholder = `Type your full user link of ${getValue}`;
   mainDiv.appendChild(div);
   closeLists(mainDiv.nextElementSibling); 
   
@@ -207,15 +199,15 @@ function addOptions(mainDiv,item,back) {
 
 
 addLink.addEventListener("click",addDiv);
-
+//let urlPattern;
 function checkUrl(inputValue,error) {
 
 let platforms = ["facebook",'twitter',"linkedin",'instagram',"youtube","github",'google'];
 let platformName = platforms.join("|");
 
   const newRegex = new RegExp(`^(https?:\/\/)?(?:www\.)?(${platformName})\.com\/\\S([-a-zA-Z0-9@:%_+.~#?&//=]*)*$`, 'i');
-  let urlPattern = newRegex.test(inputValue);
-
+   let urlPattern = newRegex.test(inputValue);
+  
   console.log(urlPattern)
 
   if(urlPattern === true ) {
@@ -227,7 +219,20 @@ let platformName = platforms.join("|");
    error.innerHTML = 'Url is inocorrect ';
    error.style.color = 'red';
   }
-
+  saveBtn.disabled = true;
+ 
+  console.log(urlPattern);
+  if(urlPattern ){
+    saveBtn.classList.remove("disabled-btn");
+    saveBtn.style.cursor = 'pointer';
+    console.log('mathced');
+    saveBtn.disabled = false;
+    //return true;
+  }else{
+    saveBtn.classList.add("disabled-btn");
+    console.log('mathced');
+    saveBtn.disabled = true; 
+  }
 
   return newRegex.test(inputValue);
 
@@ -265,12 +270,13 @@ function addLinksThroughBtn(linksText){
    anchor = document.createAttribute("href");
   anchor = websiteUrl.value;
   earlyLinkText.setAttribute('href',anchor);
-  console.log(anchor);
+ // console.log(anchor);
  
 }
 
-let saveBtn = document.getElementById("saveInfo");
-
+saveBtn.disabled = true;
+saveBtn.classList.add("disabled-btn");
+saveBtn.style.cursor = 'not-allowed';
 
 saveBtn.addEventListener("click",addCredentials);
 
@@ -279,33 +285,63 @@ let lastNameInput = document.getElementById("last-name");
 let emailInput = document.getElementById("email");
 let profileName = document.getElementById("username");
 let profileEmail = document.getElementById("user-email");
-function addingUserInfoToProfile(){
- 
 
-profileName.innerHTML = `${userNameInput.value} ${lastNameInput.value}`;
-profileEmail.innerHTML = emailInput.value;
 
+let allInputElem = document.querySelectorAll(".input-name");
+
+allInputElem.forEach(input => {
+  input.addEventListener("input",checkForValue)
+});
+
+function checkForValue(){
+  if(userNameInput.value === '' || lastNameInput.value === '' || emailInput.value === ''){
+    saveBtn.disabled = true;
+    saveBtn.style.cursor = 'not-allowed'
+    saveBtn.classList.add("disabled-btn")
+  }else{
+    saveBtn.disabled = false;
+    saveBtn.style.cursor = 'pointer'
+
+    saveBtn.classList.remove("disabled-btn")
+  }
 }
 
-function addCredentials(){
- 
-  addingUserInfoToProfile();
- 
- addLinksThroughBtn()
- 
-  saveToLocalStorage();
-  
-  
-}
+
+
+userNameInput.value =localStorage.getItem('firstName');
+lastNameInput.value = localStorage.getItem("lastName");
+emailInput.value = localStorage.getItem("email");
+
 
 
 function saveToLocalStorage(){
 
-  localStorage.setItem("save-dom",profileName.innerHTML);
-  localStorage.setItem("email",profileEmail.innerHTML);
+  localStorage.setItem("firstName",userNameInput.value);
+  localStorage.setItem("lastName",lastNameInput.value)
+  localStorage.setItem("email",emailInput.value);
  // localStorage.setItem("user-image",);
   localStorage.setItem("link",linkBox.innerHTML);
   localStorage.setItem("anchor",anchor);
+
+}
+
+
+
+function addingUserInfoToProfile(){
+ 
+
+  profileName.innerHTML = `${userNameInput.value } ${lastNameInput.value}`;
+  profileEmail.innerHTML = emailInput.value;
+  
+  }
+  
+
+function addCredentials(){
+ 
+  addLinksThroughBtn()
+  saveToLocalStorage();
+  addingUserInfoToProfile();
+  
 
 }
 
