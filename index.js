@@ -85,9 +85,6 @@ let counter ='';
 
 let websiteUrl =  [];
 
-
-
-
 function addDiv(){
  
 //alert('ger')
@@ -179,7 +176,6 @@ saveBtn.classList.add("disabled-btn")
 
 }
 
-
 function addOptions(mainDiv,item,back) {
   mainDiv.innerHTML = '';
   getValue = item.getAttribute("value");
@@ -196,7 +192,6 @@ function addOptions(mainDiv,item,back) {
 
 
 }
-
 
 addLink.addEventListener("click",addDiv);
 //let urlPattern;
@@ -238,10 +233,7 @@ let platformName = platforms.join("|");
 
 }
 
-
-
 const linkBox = document.querySelector(".link-box")
-
 
 let linkContainer  = [];
 let earlyLinkText = '';
